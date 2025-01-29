@@ -14,7 +14,7 @@ def get_new_user_token():
 def positive_assert(kit_body):
     response = sender_stand_request.post_new_client_kit(kit_body, get_new_user_token())
     assert response.status_code == 201
-    assert response.json()["name"] == kit_body("name")
+    assert response.json()["name"] == kit_body["name"]
 
 def negative_assert_code_400(kit_body):
     response = sender_stand_request.post_new_client_kit(kit_body, get_new_user_token())
